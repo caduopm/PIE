@@ -1,6 +1,12 @@
 # Byte-compiled / optimized / DLL files
-__pycache__/
-# *.py[cod]
+*__pycache__*
+*.pyc
+
+# venv
+venv/
 
 # idea
 .idea/
+
+# vs code
+.vccode/
