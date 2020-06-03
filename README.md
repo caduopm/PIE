@@ -1,5 +1,4 @@
-# PIE
-Projeto Integrado E ( Happy to Help )
+# PIE - Projeto Integrado E ( Happy to Help )
 <img src="https://github.com/caduopm/PIE/blob/master/ProjetoIntegradoE/app_htoh/static/images/Icons/logo_htoh_green.fw.png" hegth="230" width="490">
 
 ## Project Setup
