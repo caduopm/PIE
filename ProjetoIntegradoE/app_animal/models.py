@@ -118,8 +118,8 @@ class Disease(models.Model):
 
 class Animal(models.Model):
     image1 = models.CharField(max_length=50, null=False, blank=False)
-    image2 = models.CharField(max_length=50)
-    image3 = models.CharField(max_length=50)
+    image2 = models.CharField(max_length=50, null=True, blank=True)
+    image3 = models.CharField(max_length=50, null=True, blank=True)
     name = models.CharField(max_length=100)
     age = models.ForeignKey(Age, on_delete=models.CASCADE)
     size = models.ForeignKey(Size, on_delete=models.CASCADE)
@@ -128,19 +128,20 @@ class Animal(models.Model):
     species = models.ForeignKey(Species, on_delete=models.CASCADE, null=False, blank=False, related_name='species')
     unique_characteristics = models.TextField(max_length=500)
     color1 = models.ForeignKey(Color, on_delete=models.CASCADE, null=False, blank=False, related_name='color1')
-    color2 = models.ForeignKey(Color, on_delete=models.CASCADE, null=True, related_name='color2')
-    color3 = models.ForeignKey(Color, on_delete=models.CASCADE, null=True, related_name='color3')
+    color2 = models.ForeignKey(Color, on_delete=models.CASCADE, null=True, blank=True, related_name='color2')
+    color3 = models.ForeignKey(Color, on_delete=models.CASCADE, null=True, blank=True, related_name='color3')
     castrated = models.ForeignKey(Castrated, on_delete=models.CASCADE, null=False, blank=False)
     surgery = models.TextField(max_length=500)
     status = models.ForeignKey(Status, on_delete=models.CASCADE)
     breed = models.ForeignKey(Breed, on_delete=models.CASCADE, null=False, blank=False)
     description = models.TextField(max_length=500)
     posted_by = models.ForeignKey(UserType, on_delete=models.CASCADE)
-    how_was_it_welcomed = models.ForeignKey(Species, on_delete=models.CASCADE, related_name='how_was_it_welcomed')
-    found_location = models.CharField(max_length=50)
+    how_was_it_welcomed = models.ForeignKey(Status, on_delete=models.CASCADE, related_name='how_was_it_welcomed')
+    found_location = models.CharField(max_length=50, null=True, blank=True)
+    lost_location = models.CharField(max_length=50, null=True, blank=True)
     welcome_date = models.DateTimeField()
     disease = models.ForeignKey(Disease, on_delete=models.CASCADE, null=False, blank=False)
 
     def __str__(self):
-        return self.nome
+        return self.name
 
