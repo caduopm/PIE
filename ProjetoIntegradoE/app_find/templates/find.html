@@ -79,110 +79,19 @@
 
         <hr>
         <div class="row">
+            {% for animal in animals %}
             <!-- cards -->
             <div class="card shadow mb-4">
-                <img class="card-img-top" src="{% static '/images/animals/cat1.jpg' %}" alt="Card image cap">
+                <img class="card-img-top" src="{% static animal.image1 %}" alt="Card image cap">
                 <div class="card-body">
-                    <h5 class="card-title">Sr. Julgamento</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                        the card's content.</p>
+                    <h5 class="card-title">{{ animal.name }}</h5>
+                    <p class="card-text">{{ animal.description }}</p>
                 </div>
                 <div class="col align-self-end">
-                    <button type="button" class="btn btn-outline-secondary btn-lg btn-block btn-sm mb-3">Mais
-                        informações</button>
+                    <button type="button" class="btn btn-outline-secondary btn-lg btn-block btn-sm mb-3">Mais informações</button>
                 </div>
             </div>
-            <!-- cards -->
-            <div class="card shadow mb-4">
-                <img class="card-img-top" src="{% static '/images/animals/cat2.jpg' %}" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">O destruidor</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                        the card's content.</p>
-                </div>
-                <div class="col align-self-end">
-                    <button type="button" class="btn btn-outline-secondary btn-lg btn-block btn-sm mb-3">Mais
-                        informações</button>
-                </div>
-            </div>
-            <!-- cards -->
-            <div class="card shadow mb-4">
-                <img class="card-img-top" src="{% static '/images/animals/cat3.jpg' %}" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">Sr. Rabugento</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                        the card's content.</p>
-                </div>
-                <div class="col align-self-end">
-                    <button type="button" class="btn btn-outline-secondary btn-lg btn-block btn-sm mb-3">Mais
-                        informações</button>
-                </div>
-            </div>
-            <!-- cards -->
-            <div class="card shadow mb-4">
-                <img class="card-img-top" src="{% static '/images/animals/dog1.jpg' %}" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">Verdade?</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                        the card's content.</p>
-                </div>
-                <div class="col align-self-end">
-                    <button type="button" class="btn btn-outline-secondary btn-lg btn-block btn-sm mb-3">Mais
-                        informações</button>
-                </div>
-            </div>
-            <!-- cards -->
-            <div class="card shadow mb-4">
-                <img class="card-img-top" src="{% static '/images/animals/dog2.jpg' %}" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">Sr. Pirata</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                        the card's content.</p>
-                </div>
-                <div class="col align-self-end">
-                    <button type="button" class="btn btn-outline-secondary btn-lg btn-block btn-sm mb-3">Mais
-                        informações</button>
-                </div>
-            </div>
-            <!-- cards -->
-            <div class="card shadow mb-4">
-                <img class="card-img-top" src="{% static '/images/animals/dog3.jpg' %}" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">Da comida</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                        the card's content.</p>
-                </div>
-                <div class="col align-self-end">
-                    <button type="button" class="btn btn-outline-secondary btn-lg btn-block btn-sm mb-3">Mais
-                        informações</button>
-                </div>
-            </div>
-            <!-- cards -->
-            <div class="card shadow mb-4">
-                <img class="card-img-top" src="{% static '/images/animals/bird1.jpg' %}" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">To com vergonha</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                        the card's content.</p>
-                </div>
-                <div class="col align-self-end">
-                    <button type="button" class="btn btn-outline-secondary btn-lg btn-block btn-sm mb-3">Mais
-                        informações</button>
-                </div>
-            </div>
-            <!-- cards -->
-            <div class="card shadow mb-4">
-                <img class="card-img-top" src="{% static '/images/animals/bird2.jpg' %}" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">Rap...</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                        the card's content.</p>
-                </div>
-                <div class="col align-self-end">
-                    <button type="button" class="btn btn-outline-secondary btn-lg btn-block btn-sm mb-3">Mais
-                        informações</button>
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </div>
 
