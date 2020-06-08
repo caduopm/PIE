@@ -24,4 +24,5 @@ urlpatterns = [
     path('chart/', include('app_chart.urls')),
     path('donate/', include('app_donate.urls')),
     path('find/', include('app_find.urls')),
+    path('user/', include('app_user.urls')),
 ]
