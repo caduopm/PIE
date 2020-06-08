@@ -9,7 +9,7 @@
 // }
 
 // Adiciona mascara nos campos com jQuery
-$(document).ready(function(){
+$(document).ready(function($){
     $('#cpf').mask('000.000.000-00');
     $('#phone').mask('(99) 99999-9999');
 });
@@ -26,3 +26,4 @@ function readURL(input) {
         reader.readAsDataURL(input.files[0]);
     }
 }
+
