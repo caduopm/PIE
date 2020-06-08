@@ -1,8 +1,35 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.forms import ModelForm
+from .form import LoginForm
+from django.apps import apps
+User = apps.get_model('app_user', 'User')
 
 
 def login(request):
-    return render(request, 'login.html')
+    isValid = False
+    data = {}
+    data['showErrorMessege'] = True
+    form = LoginForm(request.POST or None)
+
+    if request.method == 'POST':
+        if form.is_valid():
+            obj = [
+                form.cleaned_data['email'], 
+                form.cleaned_data['password']
+            ]
+
+            for user in User.objects.all():
+                if user.email == obj[0]:
+                    if user.password == obj[1]:
+                        isValid = True
+
+            if isValid:
+                return redirect('index')
+            else:
+                data['showErrorMessege'] = False
+
+    data['form'] = form
+    return render(request, 'login.html', data)
 
 
 def register(request):

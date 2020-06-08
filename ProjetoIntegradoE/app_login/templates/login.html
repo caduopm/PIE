@@ -2,9 +2,10 @@
 {% load static %}
 
 {% block content %}
-
+{% load crispy_forms_tags %}
 
     <!-- <div class="row register d-flex justify-content-center"> -->
+    <!-- <script src="{% static 'scriptLogin.js' %}"></script> -->
     <div class="row register justify-content-center">
         <div class="col-md-5 col-xs-12 shadow register-center">
 
@@ -19,17 +20,25 @@
             <div class="row justify-content-center">
                 <div class="col-sm-6 col-xs-12 text-center">
                     <!-- <form class="mt-4 mb-4" action="/exemplo.js"> -->
-                    <form class="mt-4 mb-4">
-                        <div class="form-group">
+                    {% if showErrorMessege %}
+                    <div class="alert alert-danger" role="alert">
+                        Usuário ou senha incorreto!
+                    </div>
+                    {% endif %}
+                    <!-- {{ showErrorMessege }} -->
+                    <form class="mt-4 mb-4" method="POST">
+                        {% csrf_token %}
+                        {{ form|crispy  }}
+                        <!-- <div class="form-group">
                             <input type="email" placeholder="E-MAIL" class="form-control" id="email">
                         </div>
                         <div class="form-group">
                             <input type="password" placeholder="SENHA" class="form-control" id="pwd">
-                        </div>
+                        </div> -->
                         <button type="submit" class="btn btn-secondary btn-lg btn-block ">ENTRAR</button>
                     </form>
                     <p><a class="register-link" href="{% url 'resetPassword' %}">Esqueceu sua senha?</a></p>
-                    <p><a class="register-link" href="{% url 'register' %}">Se cadastrar aqui!!!</a></p>
+                    <p><a class="register-link" href="{% url 'user' %}">Se cadastrar aqui!!!</a></p>
                     
                 </div>
             </div>
